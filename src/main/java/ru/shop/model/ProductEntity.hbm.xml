@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ru.shop.model.ProductEntity" table="product" schema="shop">
+        <id name="id">
+            <column name="ID" sql-type="int(11)"/>
+        </id>
+        <property name="brand">
+            <column name="Brand" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="typeOfProduct">
+            <column name="TypeOfProduct" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="price">
+            <column name="Price" sql-type="int(11)"/>
+        </property>
+        <property name="size">
+            <column name="Size" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="sold">
+            <column name="Sold" sql-type="tinyint(1)"/>
+        </property>
+        <property name="condition">
+            <column name="Condition" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="description">
+            <column name="Description" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
