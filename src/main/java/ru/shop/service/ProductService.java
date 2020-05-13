@@ -14,4 +14,6 @@ public interface ProductService {
     public ProductEntity getProductById(int id);
 
     public List<ProductEntity> listProducts();
+
+    public List<ProductEntity> listProductsByUser(int idUser);
 }

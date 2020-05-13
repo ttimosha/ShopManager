@@ -44,4 +44,10 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductEntity> listProducts() {
         return this.productDao.listProducts();
     }
+
+    @Override
+    @Transactional
+    public List<ProductEntity> listProductsByUser(int idUser) {
+        return this.productDao.listProductsByUser(idUser);
+    }
 }

@@ -36,7 +36,6 @@ public class ProductController {
         model.addAttribute("product", new ProductEntity());
         model.addAttribute("listProducts", this.productService.listProducts());
         model.addAttribute("userService", userService);
-
         return "products";
     }
 
@@ -47,7 +46,6 @@ public class ProductController {
         } else {
             this.productService.updateProduct(product);
         }
-
         return "redirect:/products";
     }
 
@@ -61,13 +59,20 @@ public class ProductController {
     public String editProduct(@PathVariable("id") int id, Model model){
         model.addAttribute("product", this.productService.getProductById(id));
         model.addAttribute("listProducts", this.productService.listProducts());
-
         return "books";
     }
 
-    @RequestMapping("bookdata/{id}")
+    @RequestMapping("product/{id}")
     public String productData(@PathVariable("id") int id, Model model){
         model.addAttribute("product", this.productService.getProductById(id));
-        return "";
+        model.addAttribute("userService", userService);
+        return "product";
+    }
+
+    @RequestMapping("user/{id}")
+    public String userData(@PathVariable("id") int id, Model model){
+        model.addAttribute("user", this.userService.getUserById(id));
+        model.addAttribute("listProductsByUser", this.productService.listProductsByUser(id));
+        return "user";
     }
 }

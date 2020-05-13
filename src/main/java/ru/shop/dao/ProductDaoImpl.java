@@ -52,4 +52,16 @@ public class ProductDaoImpl implements ProductDao {
         List<ProductEntity> productList = session.createQuery("from ProductEntity").list();
         return productList;
     }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<ProductEntity> listProductsByUser(int idUser) {
+        Session session = this.sessionFactory.getCurrentSession();
+        String hql = "from ProductEntity p where p.seller = :sellerId";
+        List<ProductEntity> productListByUser = session.createQuery(hql)
+                .setParameter("sellerId", Integer.toString(idUser))
+                .list();
+        return productListByUser;
+    }
+
 }
