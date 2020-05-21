@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="ru.shop.model.ProductEntity" table="product" schema="shop">
+    <class name="ru.shop.model.Product" table="product" schema="shop">
         <id name="id">
             <column name="ID" sql-type="int(11)"/>
         </id>

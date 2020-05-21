@@ -2,8 +2,9 @@ package ru.shop.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.shop.model.ProductEntity;
+import ru.shop.model.Product;
 import ru.shop.dao.ProductDao;
+import ru.shop.model.ProductSearchCriteria;
 
 import java.util.List;
 
@@ -17,13 +18,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public void addProduct(ProductEntity product) {
+    public void addProduct(Product product) {
         this.productDao.addProduct(product);
     }
 
     @Override
     @Transactional
-    public void updateProduct(ProductEntity product) {
+    public void updateProduct(Product product) {
         this.productDao.updateProduct(product);
     }
 
@@ -35,19 +36,25 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public ProductEntity getProductById(int id) {
+    public Product getProductById(int id) {
         return this.productDao.getProductById(id);
     }
 
     @Override
     @Transactional
-    public List<ProductEntity> listProducts() {
+    public List<Product> listProducts() {
         return this.productDao.listProducts();
     }
 
     @Override
     @Transactional
-    public List<ProductEntity> listProductsByUser(int idUser) {
+    public List<Product> listProductsByUser(int idUser) {
         return this.productDao.listProductsByUser(idUser);
+    }
+
+    @Override
+    @Transactional
+    public List<Product> findByCriteria(ProductSearchCriteria productSearchCriteria) {
+        return this.productDao.findByCriteria(productSearchCriteria);
     }
 }

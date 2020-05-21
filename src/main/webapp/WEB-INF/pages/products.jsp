@@ -2,6 +2,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page session="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -24,8 +25,17 @@
 </head>
 <body>
 <h1>Интернет-площадка для продажи одежды</h1>
-<p align="right"><button><a href="login.html">Войти</a></button> <button><a href="reg.html">Регистрация</a></button></p>
-<p><input name="q" type="search" placeholder="Поиск по сайту" /> <input type="submit" value="Найти" /></p>
+<h2><a href="<c:url value="/products"/>" target="_blank">Главная</a></h2>
+<sec:authorize access="!isAuthenticated()">
+    <h4 align="right"><button><a href="<c:url value="/login"/>">Войти</a></button></h4>
+    <h4 align="right"><button><a href="<c:url value="/registration"/>">Регистрация</a></button></h4>
+</sec:authorize>
+<sec:authorize access="isAuthenticated()">
+    <h3 align="right">${pageContext.request.userPrincipal.name}</h3>
+    <h4 align="right"><a href="<c:url value="/logout"/>">Выйти</a></h4>
+</sec:authorize>
+<p><button><a href="<c:url value="/search"/>">Расширенный поиск</a> </button></p>
+
 <c:if test="${!empty listProducts}">
     <table class="tg" border="0" bgcolor="#f8f8ff" align="center">
         <tr>
@@ -44,9 +54,9 @@
                 <td><img src="https://www.next.com.ru/nxtcms/resource/image/2751822/portrait_ratio1x1/525/525/2110828c49f32e2fc38cef3b0f58442/LP/shirts.jpg" width="100%" height="100%"></td>
                 <td>${product.brand}</td>
                 <td>${product.typeOfProduct}</td>
-                <td>${product.price}</td>
+                <td>${product.price} ₽</td>
                 <td>${product.size}</td>
-                <td>${userService.getUserById(product.seller).name}</td>
+                <td><a href="<c:url value='/seller/${userService.getUserById(product.seller).id}'/>">${userService.getUserById(product.seller).name}</a></td>
                 <td> <c:if test="${product.sold == 0}">Не продано</c:if>
                      <c:if test="${product.sold == 1}">Продано</c:if>
                 </td>

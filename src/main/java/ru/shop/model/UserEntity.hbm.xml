@@ -4,9 +4,9 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="ru.shop.model.UserEntity" table="user" schema="shop">
+    <class name="ru.shop.model.User" table="user" schema="shop">
         <id name="id">
-            <column name="ID" sql-type="int(11)"/>
+            <column name="ID" sql-type="int"/>
         </id>
         <property name="name">
             <column name="Name" sql-type="varchar(30)" length="30"/>
@@ -16,6 +16,12 @@
         </property>
         <property name="city">
             <column name="City" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="username">
+            <column name="username" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(100)" length="100"/>
         </property>
     </class>
 </hibernate-mapping>

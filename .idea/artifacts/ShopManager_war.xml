@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ShopManager:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ShopManager</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ShopManger.war">
+      <element id="artifact" artifact-name="ShopManager:war exploded" />
+    </root>
+  </artifact>
+</component>

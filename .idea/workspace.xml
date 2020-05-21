@@ -52,7 +52,21 @@
         <item name="shop@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="product: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="authorities: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="shop@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="authority: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="shop@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="condition: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -60,6 +74,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="shop@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user_authority: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -72,9 +93,10 @@
       <list>
         <option value="hibernate-configuration-5.0" />
         <option value="hibernate-main-5.0" />
+        <option value="spring-beans.schema" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -106,27 +128,32 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.24942529" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="spring.boot" />
+    <property name="settings.editor.selected.configurable" value="spring" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Yana\IdeaProjects\BookManagerShop\src\main\webapp\WEB-INF\pages" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp\resources\js" />
+      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp\WEB-INF\pages" />
+      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp" />
+      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\Yana\IdeaProjects\BookManagerShop\src\main\java\ru\yana\lab1\model" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="" />
+      <recent name="ru.shop.model" />
       <recent name="ru.yana.lab1.dao" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Yana\IdeaProjects\BookManagerShop\src\main\java\ru\yana\lab1\model" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp\WEB-INF\pages" />
+      <recent name="C:\Users\Yana\IdeaProjects\BookManagerShop\src\main\webapp\WEB-INF\pages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -253,6 +280,14 @@
     </configuration>
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ShopManager" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -652,6 +687,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.AppTests" />
       <item itemvalue="Tomcat Runner.Unnamed" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.471" />
@@ -659,6 +695,31 @@
       <item itemvalue="Tomcat Server.Tomcat 9.0.31(1)" />
       <item itemvalue="Tomcat Server.Tomcat 8.0.32" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ddd3c09b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ddd3c09b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4dce301d" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -682,6 +743,17 @@
       <workItem from="1589044041614" duration="5062000" />
       <workItem from="1589049493002" duration="187000" />
       <workItem from="1589376155202" duration="6600000" />
+      <workItem from="1589382883123" duration="403000" />
+      <workItem from="1589476412330" duration="6787000" />
+      <workItem from="1589546655425" duration="6091000" />
+      <workItem from="1589718519696" duration="10284000" />
+      <workItem from="1589804406510" duration="5114000" />
+      <workItem from="1589893392279" duration="2830000" />
+      <workItem from="1589896244433" duration="7662000" />
+      <workItem from="1589903932202" duration="359000" />
+      <workItem from="1589904306201" duration="16747000" />
+      <workItem from="1589980343094" duration="19825000" />
+      <workItem from="1590065750572" duration="3386000" />
     </task>
     <servers />
   </component>
@@ -708,6 +780,17 @@
     <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/shop/dao/UserDaoImpl.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

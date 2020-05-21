@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ru.shop.model.Order" table="order" schema="shop">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="productId">
+            <column name="product_id" sql-type="int"/>
+        </property>
+        <property name="street">
+            <column name="street" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="house">
+            <column name="house" sql-type="int"/>
+        </property>
+        <property name="apartment">
+            <column name="apartment" sql-type="int"/>
+        </property>
+        <property name="city">
+            <column name="city" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="paid">
+            <column name="paid" sql-type="tinyint(1)" not-null="true"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(30)" length="30"/>
+        </property>
+    </class>
+</hibernate-mapping>

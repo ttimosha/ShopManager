@@ -1,7 +1,14 @@
 package ru.shop.dao;
 
-import ru.shop.model.UserEntity;
+import org.springframework.security.core.userdetails.UserDetails;
+import ru.shop.model.User;
+
+import java.util.List;
 
 public interface UserDao {
-    public UserEntity getUserById(int id);
+    public User getUserById(int id);
+    public boolean saveUser(User user);
+    public boolean deleteUser(int userId);
+    public List<User> allUsers();
+    public UserDetails loadUserByUsername(String username);
 }

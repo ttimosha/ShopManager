@@ -18,7 +18,7 @@
           destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url"
-                  value="jdbc:mysql://localhost:3306/javalab?serverTimezone=UTC"/>
+                  value="jdbc:mysql://localhost:3306/shop?serverTimezone=UTC"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </bean>
@@ -29,8 +29,14 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>ru.shop.model.ProductEntity</value>
-                <value>ru.shop.model.UserEntity</value>
+                <value>ru.shop.model.Product</value>
+                <value>ru.shop.model.User</value>
+                <value>ru.shop.model.Authority</value>
+                <value>ru.shop.model.Order</value>
+                <value>ru.shop.model.City</value>
+                <value>ru.shop.model.Type</value>
+                <value>ru.shop.model.Size</value>
+                <value>ru.shop.model.Condition</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -38,6 +44,8 @@
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
                 </prop>
                 <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/shop?serverTimezone=UTC</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</prop>
             </props>
         </property>
     </bean>
@@ -52,14 +60,58 @@
         <property name="productDao" ref="productDao"/>
     </bean>
 
-    <bean id="userDao" class="ru.shop.dao.UserDaoImpl">
+    <bean id="authorityDao" class="ru.shop.dao.AuthorityDao">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="userService" class="ru.shop.service.UserServiceImpl">
+    <bean id="userDao" class="ru.shop.dao.UserDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+        <property name="authorityDao" ref="authorityDao"/>
+    </bean>
+
+    <bean id="userService" class="ru.shop.service.MyUserDetailsService">
         <property name="userDao" ref="userDao"/>
     </bean>
 
+    <bean id="cityDao" class="ru.shop.dao.CityDao">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="cityService" class="ru.shop.service.CityService">
+        <property name="cityDao" ref="cityDao"/>
+    </bean>
+
+    <bean id="orderDao" class="ru.shop.dao.OrderDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="orderService" class="ru.shop.service.OrderServiceImpl">
+        <property name="orderDao" ref="orderDao"/>
+    </bean>
+
+    <bean id="typeDao" class="ru.shop.dao.TypeDao">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="typeService" class="ru.shop.service.TypeService">
+        <property name="typeDao" ref="typeDao"/>
+    </bean>
+
+    <bean id="sizeDao" class="ru.shop.dao.SizeDao">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="sizeService" class="ru.shop.service.SizeService">
+        <property name="sizeDao" ref="sizeDao"/>
+    </bean>
+
+    <bean id="conditionDao" class="ru.shop.dao.ConditionDao">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="conditionService" class="ru.shop.service.ConditionService">
+        <property name="conditionDao" ref="conditionDao"/>
+    </bean>
 
     <!--Transaction Manager-->
     <context:component-scan base-package="ru.shop"/>
