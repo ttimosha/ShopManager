@@ -1289,13 +1289,14 @@
     </column>
     <index id="320" parent="287" name="order_product_fk">
       <ColNames>product_id</ColNames>
+      <Unique>1</Unique>
       <Type>btree</Type>
     </index>
     <index id="321" parent="287" name="order_city_fk">
       <ColNames>city</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="322" parent="287" name="order_product_Seller_fk">
+    <index id="322" parent="287" name="order_user_ID_fk">
       <ColNames>seller_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1304,223 +1305,237 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="324" parent="287" name="order_product_fk">
+    <key id="324" parent="287" name="order_product_fk">
+      <ColNames>product_id</ColNames>
+      <UnderlyingIndexName>order_product_fk</UnderlyingIndexName>
+    </key>
+    <foreign-key id="325" parent="287" name="order_product_ID_fk">
       <ColNames>product_id</ColNames>
       <RefTableName>product</RefTableName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <foreign-key id="325" parent="287" name="order_city_fk">
+    <foreign-key id="326" parent="287" name="order_city_fk">
       <ColNames>city</ColNames>
       <RefTableName>city</RefTableName>
       <RefColNames>name</RefColNames>
     </foreign-key>
-    <foreign-key id="326" parent="287" name="order_product_Seller_fk">
+    <foreign-key id="327" parent="287" name="order_user_ID_fk">
       <ColNames>seller_id</ColNames>
-      <RefTableName>product</RefTableName>
-      <RefColNames>Seller</RefColNames>
+      <RefTableName>user</RefTableName>
+      <RefColNames>ID</RefColNames>
     </foreign-key>
-    <column id="327" parent="288" name="ID">
+    <column id="328" parent="288" name="ID">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="328" parent="288" name="Brand">
+    <column id="329" parent="288" name="Brand">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="329" parent="288" name="TypeOfProduct">
+    <column id="330" parent="288" name="TypeOfProduct">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="330" parent="288" name="Price">
+    <column id="331" parent="288" name="Price">
       <Position>4</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="331" parent="288" name="Size">
+    <column id="332" parent="288" name="Size">
       <Position>5</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="332" parent="288" name="Seller">
+    <column id="333" parent="288" name="Seller">
       <Position>6</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="333" parent="288" name="Sold">
+    <column id="334" parent="288" name="Sold">
       <Position>7</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="334" parent="288" name="state">
+    <column id="335" parent="288" name="state">
       <Position>8</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="335" parent="288" name="designation">
+    <column id="336" parent="288" name="designation">
       <Position>9</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="336" parent="288" name="picture_url">
+    <column id="337" parent="288" name="picture_url">
       <Position>10</Position>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="337" parent="288" name="product_type_fk">
+    <index id="338" parent="288" name="product_type_fk">
       <ColNames>TypeOfProduct</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="338" parent="288" name="product_size_fk">
+    <index id="339" parent="288" name="product_size_fk">
       <ColNames>Size</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="339" parent="288" name="Seller">
+    <index id="340" parent="288" name="Seller">
       <ColNames>Seller</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="340" parent="288" name="product_cond_fk">
+    <index id="341" parent="288" name="product_cond_fk">
       <ColNames>state</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="341" parent="288" name="PRIMARY">
+    <key id="342" parent="288" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="342" parent="288" name="product_type_fk">
+    <foreign-key id="343" parent="288" name="product_type_fk">
       <ColNames>TypeOfProduct</ColNames>
       <RefTableName>type</RefTableName>
       <RefColNames>type</RefColNames>
     </foreign-key>
-    <foreign-key id="343" parent="288" name="product_size_fk">
+    <foreign-key id="344" parent="288" name="product_size_fk">
       <ColNames>Size</ColNames>
       <RefTableName>size</RefTableName>
       <RefColNames>size</RefColNames>
     </foreign-key>
-    <foreign-key id="344" parent="288" name="product_ibfk_1">
+    <foreign-key id="345" parent="288" name="product_ibfk_1">
       <ColNames>Seller</ColNames>
       <RefTableName>user</RefTableName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <foreign-key id="345" parent="288" name="product_cond_fk">
+    <foreign-key id="346" parent="288" name="product_cond_fk">
       <ColNames>state</ColNames>
       <RefTableName>condition</RefTableName>
       <RefColNames>condition</RefColNames>
     </foreign-key>
-    <column id="346" parent="289" name="size">
+    <column id="347" parent="289" name="size">
       <Position>1</Position>
       <DataType>varchar(5)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="347" parent="289" name="PRIMARY">
+    <key id="348" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>size</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="348" parent="290" name="type">
+    <column id="349" parent="290" name="type">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="349" parent="290" name="PRIMARY">
+    <key id="350" parent="290" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>type</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="350" parent="291" name="ID">
+    <column id="351" parent="291" name="ID">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="351" parent="291" name="Name">
+    <column id="352" parent="291" name="Name">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="352" parent="291" name="Tele">
+    <column id="353" parent="291" name="Tele">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="353" parent="291" name="City">
+    <column id="354" parent="291" name="City">
       <Position>4</Position>
-      <DataType>varchar(30)|0s</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="354" parent="291" name="username">
+    <column id="355" parent="291" name="username">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="355" parent="291" name="password">
+    <column id="356" parent="291" name="password">
       <Position>6</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="356" parent="291" name="PRIMARY">
+    <index id="357" parent="291" name="user_city_name_fk">
+      <ColNames>City</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="358" parent="291" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="357" parent="292" name="id">
+    <foreign-key id="359" parent="291" name="user_city_name_fk">
+      <ColNames>City</ColNames>
+      <RefTableName>city</RefTableName>
+      <RefColNames>name</RefColNames>
+    </foreign-key>
+    <column id="360" parent="292" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="358" parent="292" name="authority_id">
+    <column id="361" parent="292" name="authority_id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="359" parent="292" name="user_id">
+    <column id="362" parent="292" name="user_id">
       <Position>3</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="360" parent="292" name="user_authority_authority_id_fk">
+    <index id="363" parent="292" name="user_authority_authority_id_fk">
       <ColNames>authority_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="361" parent="292" name="user_authority_user_ID_fk">
+    <index id="364" parent="292" name="user_authority_user_ID_fk">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="362" parent="292" name="PRIMARY">
+    <key id="365" parent="292" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="363" parent="292" name="user_authority_authority_id_fk">
+    <foreign-key id="366" parent="292" name="user_authority_authority_id_fk">
       <ColNames>authority_id</ColNames>
       <RefTableName>authority</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="364" parent="292" name="user_authority_user_ID_fk">
+    <foreign-key id="367" parent="292" name="user_authority_user_ID_fk">
       <ColNames>user_id</ColNames>
       <RefTableName>user</RefTableName>
       <RefColNames>ID</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
   </database-model>
 </dataSource>

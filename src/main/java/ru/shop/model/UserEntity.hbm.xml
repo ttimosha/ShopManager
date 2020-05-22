@@ -15,7 +15,7 @@
             <column name="Tele" sql-type="varchar(30)" length="30"/>
         </property>
         <property name="city">
-            <column name="City" sql-type="varchar(30)" length="30" not-null="true"/>
+            <column name="City" sql-type="varchar(50)" length="50" not-null="true"/>
         </property>
         <property name="username">
             <column name="username" sql-type="varchar(20)" length="20"/>

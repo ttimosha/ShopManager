@@ -52,14 +52,7 @@
         <item name="shop@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="order: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="shop@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="product: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -81,8 +74,8 @@
         <option value="hibernate-main-5.0" />
         <option value="spring-beans.schema" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -125,21 +118,21 @@
     <property name="settings.editor.selected.configurable" value="spring" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp\resources\js" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp\WEB-INF\pages" />
-      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp" />
-      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\Yana\IdeaProjects\BookManagerShop\src\main\java\ru\yana\lab1\model" />
+      <recent name="C:\Users\Yana\IdeaProjects\BookManagerShop\src\main\webapp\WEB-INF\pages" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="" />
       <recent name="ru.shop.model" />
       <recent name="ru.yana.lab1.dao" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp" />
+      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\java" />
+      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp\resources\js" />
       <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp\WEB-INF\pages" />
-      <recent name="C:\Users\Yana\IdeaProjects\BookManagerShop\src\main\webapp\WEB-INF\pages" />
+      <recent name="C:\Users\Yana\IdeaProjects\ShopManager\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -154,7 +147,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.31(1)">
+  <component name="RunManager" selected="JUnit.All in ShopManager">
     <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <extension name="scalaCoverage" />
@@ -348,6 +341,15 @@
       <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method v="2" />
+    </configuration>
+    <configuration name="All in ShopManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShopManager" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
@@ -680,9 +682,11 @@
       <item itemvalue="Tomcat Server.Tomcat 9.0.31" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.31(1)" />
       <item itemvalue="Tomcat Server.Tomcat 8.0.32" />
+      <item itemvalue="JUnit.All in ShopManager" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in ShopManager" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -742,6 +746,7 @@
       <workItem from="1590065750572" duration="15264000" />
       <workItem from="1590088146899" duration="15025000" />
       <workItem from="1590107052208" duration="625000" />
+      <workItem from="1590152340919" duration="11292000" />
     </task>
     <servers />
   </component>
@@ -768,22 +773,6 @@
     <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/shop/dao/UserDaoImpl.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/shop/dao/OrderDaoImpl.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

@@ -34,8 +34,11 @@ public class UserDaoImpl implements UserDao, UserDetailsService {
     @Override
     public User getUserById(int id) {
         Session session =this.sessionFactory.getCurrentSession();
-        User user = (User) session.get(User.class, id);
-        return user;
+        try {
+            User user = (User) session.get(User.class, id);
+            return user;
+        } catch (Exception e) { }
+        return null;
 }
 
     @Override
@@ -63,6 +66,13 @@ public class UserDaoImpl implements UserDao, UserDetailsService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void updateUser(User user) {
+        Session session = this.sessionFactory.getCurrentSession();
+        user.setPassword(encoder.encode(user.getPassword()));
+        session.update(user);
     }
 
     @Override

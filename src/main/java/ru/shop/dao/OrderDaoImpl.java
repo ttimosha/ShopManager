@@ -39,8 +39,11 @@ public class OrderDaoImpl implements OrderDao{
     @Override
     public Order getOrderById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Order order = (Order) session.get(Order.class, id);
-        return order;
+        try {
+            Order order = (Order) session.get(Order.class, id);
+            return order;
+        } catch (Exception e) { }
+        return null;
     }
 
     @Override

@@ -39,6 +39,12 @@ public class MyUserDetailsService implements UserService, UserDetailsService {
 
     @Override
     @Transactional
+    public void updateUser(User user) {
+        this.userDao.updateUser(user);
+    }
+
+    @Override
+    @Transactional
     public List<User> allUsers() {
         return this.userDao.allUsers();
     }

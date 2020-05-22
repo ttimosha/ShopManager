@@ -72,7 +72,10 @@ public class UserController {
                 model.addAttribute("usernameError", "Пользователь с таким именем уже существует");
                 return "registration";
             }
-        } catch (Exception e) { }
+        } catch (Exception e) {
+            model.addAttribute("error", "Пожалуйста, проверьте правильность введенных данных.");
+            return "registration";
+        }
         return "redirect:/";
     }
 

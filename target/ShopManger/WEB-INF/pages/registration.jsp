@@ -31,6 +31,7 @@
 <body>
 <h2><a href="<c:url value="/products"/>" target="_blank">Главная</a></h2>
 <div>
+    ${error}
     <form:form method="POST" modelAttribute="userForm">
         <h2>Регистрация</h2>
         <div>
@@ -39,8 +40,11 @@
         <div>
             <form:input type="text" path="tele" placeholder="Телефон" required="required"></form:input>
         </div>
-        <div>
-            <form:input type="text" path="city" placeholder="Город" required="required"></form:input>
+        <div>>
+                <form:select path="city">
+                    <form:option value="" label="--- Выберите город ---"/>
+                    <form:options items="${listCities}"/>
+                </form:select>
         </div>
         <div>
             <form:input type="text" path="username" placeholder="Имя пользователя"

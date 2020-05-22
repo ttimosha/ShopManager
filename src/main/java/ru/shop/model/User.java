@@ -20,7 +20,7 @@ public class User implements UserDetails {
     @Column(name = "Tele", nullable = false, length = 30)
     private String tele;
     @Basic
-    @Column(name = "City", nullable = true, length = 30)
+    @Column(name = "City", nullable = true, length = 50)
     private String city;
     @Basic
     @Column(name = "username", nullable = false, length = 20)
@@ -33,7 +33,7 @@ public class User implements UserDetails {
     private String passwordConfirm;
 
     @SuppressWarnings("JpaAttributeTypeInspection")
-    @ManyToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(name = "user_authority", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name="authority_id", referencedColumnName = "id"))
     private Collection<Authority> authorities;
