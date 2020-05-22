@@ -1,5 +1,6 @@
 package ru.shop.service;
 
+import org.springframework.security.core.userdetails.UserDetails;
 import ru.shop.model.User;
 
 import java.util.List;
@@ -9,4 +10,5 @@ public interface UserService {
     public boolean saveUser(User user);
     public boolean deleteUser(int userId);
     public List<User> allUsers();
+    public UserDetails loadUserByUsername(String username);
 }

@@ -14,4 +14,6 @@ public interface OrderService {
     public Order getOrderById(int id);
 
     public List<Order> listOrders();
+
+    public List<Order> listOrdersByUser(int id);
 }

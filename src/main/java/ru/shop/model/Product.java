@@ -3,7 +3,7 @@ package ru.shop.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "product", schema = "shop", catalog = "")
+@Table(name = "product", schema = "shop")
 public class Product {
     private int id;
     private String brand;
@@ -11,9 +11,10 @@ public class Product {
     private int price;
     private int seller;
     private String size;
-    private byte sold;
+    private Byte sold;
     private String condition;
     private String description;
+    private String pictureUrl;
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -77,16 +78,16 @@ public class Product {
 
     @Basic
     @Column(name = "Sold", nullable = false)
-    public byte getSold() {
+    public Byte getSold() {
         return sold;
     }
 
-    public void setSold(byte sold) {
+    public void setSold(Byte sold) {
         this.sold = sold;
     }
 
     @Basic
-    @Column(name = "Condition", nullable = true, length = 10)
+    @Column(name = "state", nullable = true, length = 10)
     public String getCondition() {
         return condition;
     }
@@ -96,13 +97,23 @@ public class Product {
     }
 
     @Basic
-    @Column(name = "Description", nullable = true, length = 100)
+    @Column(name = "designation", nullable = true, length = 100)
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Basic
+    @Column(name = "picture_url", nullable = true, length = 200)
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
     @Override

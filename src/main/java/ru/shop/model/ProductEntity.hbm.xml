@@ -24,10 +24,13 @@
             <column name="Sold" sql-type="tinyint(1)"/>
         </property>
         <property name="condition">
-            <column name="Condition" sql-type="varchar(10)" length="10" not-null="true"/>
+            <column name="state" sql-type="varchar(10)" length="10" not-null="true"/>
         </property>
         <property name="description">
-            <column name="Description" sql-type="varchar(100)" length="100" not-null="true"/>
+            <column name="designation" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="pictureUrl">
+            <column name="picture_url" sql-type="varchar(200)" length="100" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

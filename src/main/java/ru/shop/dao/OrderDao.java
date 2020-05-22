@@ -15,4 +15,6 @@ public interface OrderDao {
 
     public List<Order> listOrders();
 
+    public List<Order> listOrdersByUser(int id);
+
 }

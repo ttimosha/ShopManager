@@ -10,7 +10,7 @@
     <title>Страница пользователя</title>
     <style>
         body {
-            background-color: #ccccff;
+            background-color: #ccffcc;
             text-align: center;
             color: black;
             font-family: 'Times New Roman', Times, serif;
@@ -34,6 +34,7 @@
 </sec:authorize>
 <sec:authorize access="isAuthenticated()">
     <h3 align="right">${pageContext.request.userPrincipal.name}</h3>
+    <h3 align="right"><button><a href="<c:url value="/account/${pageContext.request.userPrincipal.name}"/>">Личный кабинет</a></button></h3>
     <h4 align="right"><a href="<c:url value="/logout"/>">Выйти</a></h4>
 </sec:authorize>
 <p><button><a href="<c:url value="/search"/>">Расширенный поиск</a> </button></p>
@@ -61,7 +62,7 @@
     </tr>
     <c:forEach items="${listProductsByUser}" var="product">
         <tr>
-            <td><img src="https://www.next.com.ru/nxtcms/resource/image/2751822/portrait_ratio1x1/525/525/2110828c49f32e2fc38cef3b0f58442/LP/shirts.jpg" width="100%" height="100%"></td>
+            <td><img src=${product.pictureUrl} width="100%" height="100%"></td>
             <td>${product.brand}</td>
             <td>${product.typeOfProduct}</td>
             <td>${product.price} ₽</td>
@@ -70,7 +71,7 @@
                 <c:if test="${product.sold == 1}">Продано</c:if>
             </td>
             <td>${product.condition}</td>
-            <td><button><a href="/product/${product.id}" target="_blank">Перейти</a></button></td>
+            <td><button><a href="<c:url value='/product/${product.id}'/>" target="_blank">Перейти</a></button></td>
         </tr>
     </c:forEach>
 </table>

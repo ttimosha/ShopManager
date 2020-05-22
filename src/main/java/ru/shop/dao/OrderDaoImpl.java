@@ -50,4 +50,14 @@ public class OrderDaoImpl implements OrderDao{
         return orderList;
     }
 
+    @Override
+    public List<Order> listOrdersByUser(int id) {
+        Session session = this.sessionFactory.getCurrentSession();
+        String hql = "from Order o where o.seller_id = :sellerId";
+        List<Order> orderList = session.createQuery(hql)
+                .setParameter("sellerId", id)
+                .list();
+        return orderList;
+    }
+
 }

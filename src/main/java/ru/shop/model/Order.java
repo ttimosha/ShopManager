@@ -13,6 +13,7 @@ public class Order {
     private String city;
     private Byte paid;
     private String email;
+    private int seller_id;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -92,6 +93,16 @@ public class Order {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Basic
+    @Column(name = "seller_id", nullable = false)
+    public int getSeller_id() {
+        return seller_id;
+    }
+
+    public void setSeller_id(int seller_id) {
+        this.seller_id = seller_id;
     }
 
     @Override

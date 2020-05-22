@@ -7,6 +7,25 @@
 <head>
     <meta charset="utf-8">
     <title>Регистрация</title>
+    <style>
+        body {
+            background-color: #ccffcc;
+            text-align: center;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18pt;
+        }
+        .layer > div {
+            background-color: white;
+            text-align: center;
+            float: center;
+            width: 30%;
+            margin: 35px;
+            padding: 200px;
+            border: 1px ;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -15,32 +34,31 @@
     <form:form method="POST" modelAttribute="userForm">
         <h2>Регистрация</h2>
         <div>
-            <form:input type="text" path="name" placeholder="Имя"></form:input>
+            <form:input type="text" path="name" placeholder="Имя" required="required"></form:input>
         </div>
         <div>
-            <form:input type="text" path="tele" placeholder="Телефон"></form:input>
+            <form:input type="text" path="tele" placeholder="Телефон" required="required"></form:input>
         </div>
         <div>
-            <form:input type="text" path="city" placeholder="Город"></form:input>
+            <form:input type="text" path="city" placeholder="Город" required="required"></form:input>
         </div>
         <div>
             <form:input type="text" path="username" placeholder="Имя пользователя"
-                        autofocus="true"></form:input>
+                        autofocus="true" required="required"></form:input>
             <form:errors path="username"></form:errors>
                 ${usernameError}
         </div>
         <div>
-            <form:input type="password" path="password" placeholder="Пароль"></form:input>
+            <form:input type="password" path="password" placeholder="Пароль" required="required"></form:input>
         </div>
         <div>
             <form:input type="password" path="passwordConfirm"
-                        placeholder="Подвердите пароль"></form:input>
+                        placeholder="Подвердите пароль" required="required"></form:input>
             <form:errors path="password"></form:errors>
                 ${passwordError}
         </div>
         <button type="submit">Зарегистрироваться</button>
     </form:form>
-    <a href="<c:url value="/products"/>">Главная</a>
 </div>
 </body>
 </html>

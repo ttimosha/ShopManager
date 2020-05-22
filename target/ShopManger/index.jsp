@@ -10,7 +10,7 @@
   <title>Интернет-площадка для продажи одежды</title>
   <style>
     body {
-      background-color: #ccccff;
+      background-color: #ccffcc;
       text-align: center;
       color: black;
       font-family: 'Times New Roman', Times, serif;
@@ -32,7 +32,8 @@
 </sec:authorize>
 <sec:authorize access="isAuthenticated()">
 <h3 align="right">${pageContext.request.userPrincipal.name}</h3>
-<h4 align="right"><a href="/logout">Выйти</a></h4>
+  <h3 align="right"><button><a href="<c:url value="/account/${pageContext.request.userPrincipal.name}"/>">Личный кабинет</a></button></h3>
+<h4 align="right"><a href="<c:url value="/logout"/>">Выйти</a></h4>
 </sec:authorize>
 
 <p><button><a href="<c:url value="/search"/>">Расширенный поиск</a> </button></p>

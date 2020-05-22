@@ -29,5 +29,8 @@
         <property name="email">
             <column name="email" sql-type="varchar(30)" length="30"/>
         </property>
+        <property name="seller_id">
+            <column name="seller_id" sql-type="int"/>
+        </property>
     </class>
 </hibernate-mapping>

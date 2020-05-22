@@ -26,7 +26,7 @@
     </style>
 </head>
 <body>
-<h1>Интернет-площадка для продажи одежды</h1>
+<h1>Личный кабинет</h1>
 <h2><a href="<c:url value="/products"/>" target="_blank">Главная</a></h2>
 <sec:authorize access="!isAuthenticated()">
     <h4 align="right"><button><a href="<c:url value="/login"/>">Войти</a></button></h4>
@@ -38,43 +38,22 @@
     <h4 align="right"><a href="<c:url value="/logout"/>">Выйти</a></h4>
 </sec:authorize>
 <p><button><a href="<c:url value="/search"/>">Расширенный поиск</a> </button></p>
-<h2>${user.name}</h2>
-<h3>Информация о пользователе:</h3>
-<table class="tg" border="0"align="center">
-    <tr>
-        <td class="vl">Телефон:</td><td>${user.tele}</td>
-    </tr>
-    <tr>
-        <td class="vl">Город:</td><td>${user.city}</td>
-    </tr>
-</table>
-<h3>Товары пользователя:</h3>
-<table class="tg" border="0" bgcolor="#f8f8ff" align="center">
-    <tr>
-        <th width="240"></th>
-        <th width="120">Бренд</th>
-        <th width="120">Тип продукта</th>
-        <th width="120">Цена</th>
-        <th width="60">Размер</th>
-        <th width="60">Продано</th>
-        <th width="60">Состояние</th>
-        <th width="60"></th>
-    </tr>
-    <c:forEach items="${listProductsByUser}" var="product">
-        <tr>
-            <td><img src=${product.pictureUrl} width="100%" height="100%"></td>
-            <td>${product.brand}</td>
-            <td>${product.typeOfProduct}</td>
-            <td>${product.price} ₽</td>
-            <td>${product.size}</td>
-            <td> <c:if test="${product.sold == 0}">Не продано</c:if>
-                <c:if test="${product.sold == 1}">Продано</c:if>
-            </td>
-            <td>${product.condition}</td>
-            <td><button><a href="<c:url value='/product/${product.id}'/>" target="_blank">Перейти</a></button></td>
-        </tr>
-    </c:forEach>
-</table>
-
+<c:if test="${pageContext.request.userPrincipal.name == username}">
+<h3>Ваши заказы:</h3>
+    <c:if test="${!empty orderList}">
+        <table class="tg" border="0" bgcolor="#f8f8ff" align="center">
+            <c:forEach items="${orderList}" var="order">
+                <tr>
+                    <td>${order.city}, ${order.street}, ${order.house}, ${order.apartment}</td>
+                    <td>${order.email}</td>
+                    <td> <c:if test="${order.paid == 0}">Не оплачено</c:if>
+                        <c:if test="${order.paid == 1}">Оплачено</c:if>
+                    </td>
+                    <td><button><a href="<c:url value='/product/${order.productId}'/>" target="_blank">Перейти к товару</a></button></td>
+                </tr>
+            </c:forEach>
+        </table>
+    </c:if>
+</c:if>
 </body>
 </html>

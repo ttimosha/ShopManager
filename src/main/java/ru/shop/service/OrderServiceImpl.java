@@ -44,4 +44,10 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> listOrders() {
         return this.orderDao.listOrders();
     }
+
+    @Transactional
+    @Override
+    public List<Order> listOrdersByUser(int id) {
+        return this.orderDao.listOrdersByUser(id);
+    }
 }

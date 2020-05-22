@@ -11,7 +11,7 @@
     <http auto-config="true">
         <intercept-url pattern="/login*" access="isAnonymous()" />
         <intercept-url pattern="/account*" access="hasAnyRole('ROLE_USER')"/>
-
+        <csrf disabled="true"/>
         <form-login login-page='/login'
                     default-target-url="/"
                     authentication-failure-url="/login?error=true"
