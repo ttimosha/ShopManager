@@ -76,7 +76,7 @@ public class UserController {
             model.addAttribute("error", "Пожалуйста, проверьте правильность введенных данных.");
             return "registration";
         }
-        return "redirect:/";
+        return "login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)

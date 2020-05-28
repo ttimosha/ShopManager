@@ -78,13 +78,13 @@ public class ProductDaoImpl implements ProductDao {
         if (productSearchCriteria.getTypeOfProduct() != null && !productSearchCriteria.getTypeOfProduct().equals("")) {
             criteria.add(Restrictions.ilike("typeOfProduct", productSearchCriteria.getTypeOfProduct(), MatchMode.ANYWHERE));
         }
-        if (productSearchCriteria.getBrand() != null) {
+        if (productSearchCriteria.getBrand() != null && !productSearchCriteria.getBrand().equals("")) {
             criteria.add(Restrictions.ilike("brand", productSearchCriteria.getBrand(), MatchMode.ANYWHERE));
         }
         if (productSearchCriteria.getSize() != null && !productSearchCriteria.getSize().equals("")) {
             criteria.add(Restrictions.ilike("size", productSearchCriteria.getSize(), MatchMode.EXACT));
         }
-        if (productSearchCriteria.getCondition()!= null && !productSearchCriteria.getSize().equals("")){
+        if (productSearchCriteria.getCondition()!= null && !productSearchCriteria.getCondition().equals("")){
             criteria.add(Restrictions.ilike("condition", productSearchCriteria.getCondition(), MatchMode.ANYWHERE));
         }
         if (productSearchCriteria.getPriceLess() != 0) {

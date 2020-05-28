@@ -57,7 +57,6 @@
                 <c:if test="${product.sold == 1}"><span style="color: red; ">Продано</span></c:if></p>
             <p>${product.condition}</p>
             <button><a href="<c:url value='/product/${product.id}'/>">Перейти</a></button>
-
         </td>
         <td>
         <c:if test="${!orderMade}">

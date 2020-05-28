@@ -47,20 +47,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="shop@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="shop@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="shop: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="user_authority: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -110,12 +96,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.24942529" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="spring" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -147,7 +133,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in ShopManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.31(1)">
     <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <extension name="scalaCoverage" />
@@ -677,12 +663,12 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.AppTests" />
+      <item itemvalue="JUnit.All in ShopManager" />
       <item itemvalue="Tomcat Runner.Unnamed" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.471" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.31" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.31(1)" />
       <item itemvalue="Tomcat Server.Tomcat 8.0.32" />
-      <item itemvalue="JUnit.All in ShopManager" />
     </list>
     <recent_temporary>
       <list>
@@ -746,7 +732,10 @@
       <workItem from="1590065750572" duration="15264000" />
       <workItem from="1590088146899" duration="15025000" />
       <workItem from="1590107052208" duration="625000" />
-      <workItem from="1590152340919" duration="11292000" />
+      <workItem from="1590152340919" duration="12722000" />
+      <workItem from="1590257911225" duration="3502000" />
+      <workItem from="1590698703650" duration="2235000" />
+      <workItem from="1590702081017" duration="4584000" />
     </task>
     <servers />
   </component>

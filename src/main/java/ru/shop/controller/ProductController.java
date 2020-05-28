@@ -96,14 +96,14 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/account/{username}/add/{user_id}", method = RequestMethod.POST)
-    public String addProduct(@ModelAttribute("product") Product product, @PathVariable("user_id") int id, Model model){
-        try {
+    public String addProduct(@ModelAttribute("product") Product product, @PathVariable("user_id") int id,@ModelAttribute("username") String username,  Model model){
+        //try {
                 product.setSeller(id);
                 product.setSold((byte) 0);
                 this.productService.addProduct(product);
                 model.addAttribute("added", true);
                 model.addAttribute("mess", "Товар успешно добавлен");
-        } catch (Exception e) { model.addAttribute("mess", "Произошла ошибка"); }
+        //} catch (Exception e) { model.addAttribute("mess", "Произошла ошибка"); }
         return "add";
     }
 
@@ -115,8 +115,8 @@ public class ProductController {
         return "edit";
     }
 
-    @RequestMapping(value = "/account/{username}/edit", method = RequestMethod.POST)
-    public String editProduct(@ModelAttribute("product") Product product, Model model){
+    @RequestMapping(value = "/account/{username}/edit/{product_id}", method = RequestMethod.POST)
+    public String editProduct(@ModelAttribute("product") Product product, @ModelAttribute("username") String username, Model model){
         try {
             this.productService.updateProduct(product);
             model.addAttribute("mess", "Товар успешно отредактирован");
@@ -169,8 +169,9 @@ public class ProductController {
                     model.addAttribute("product", product);
                     model.addAttribute("user", this.userService.getUserById(product.getSeller()));
                     model.addAttribute("orderForm", new Order());
+                    model.addAttribute("userService", userService);
             } else {
-                model.addAttribute("errormess", "Извини, товар недоступен");
+                model.addAttribute("mess", "Извините, товар недоступен для покупки");
             }
         } catch (Exception e) { }
         return "buy";
@@ -188,7 +189,7 @@ public class ProductController {
             model.addAttribute("orderMade", true);
         }
         catch (Exception e) {
-            String mess = "Извините, произошла ошибка";
+            String mess = "Извините, произошла ошибка или товар недоступен к заказу";
             model.addAttribute("mess", mess);
         }
         return "buy";

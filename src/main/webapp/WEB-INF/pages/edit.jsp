@@ -43,6 +43,7 @@
 <p>${mess}</p>
     <form:form commandName="product" method="post">
         <table align="center">
+
             <tr>
                 <td>
                     <form:label path="brand">
@@ -102,6 +103,7 @@
                     </form:select>
                 </td>
             </tr>
+
             <tr>
                 <td>
                     <form:label path="description">
@@ -121,6 +123,21 @@
                 <td>
                     <form:input path="pictureUrl" maxlength="200" size="100"/>
                 </td>
+            </tr>
+            <tr style="display:none;">
+                <td >
+                    <form:input path="id" readonly="true" size="8" disabled="true"/>
+                    <form:hidden path="id"/>
+                </td>
+                <td>
+                    <form:input path="sold" readonly="true" disabled="true"/>
+                    <form:hidden path="sold"/>
+                </td>
+                <td>
+                    <form:input path="seller" readonly="true" disabled="true"/>
+                    <form:hidden path="seller"/>
+                </td>
+
             </tr>
             <tr>
                 <td colspan="2">

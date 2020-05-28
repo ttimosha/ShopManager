@@ -40,7 +40,7 @@
         <div>
             <form:input type="text" path="tele" placeholder="Телефон" required="required"></form:input>
         </div>
-        <div>>
+        <div>
                 <form:select path="city">
                     <form:option value="" label="--- Выберите город ---"/>
                     <form:options items="${listCities}"/>
